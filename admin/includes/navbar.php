@@ -8,7 +8,7 @@
     <div class="sidebar-brand-icon rotate-n-15">
         <i class="fas fa-laugh-wink"></i>
     </div>
-    <div class="sidebar-brand-text mx-3">Admin</div>
+    <div class="sidebar-brand-text mx-3"> <b> Admin </b></div>
 </a>
 
 <!-- Divider -->
@@ -19,7 +19,7 @@
 <li class="nav-item active">
     <a class="nav-link" href="index.php">
         <i class="fas fa-fw fa-tachometer-alt"></i>
-        <span>Dashboard</span></a>
+        <span> <b> Dashboard </b></span></a>
 </li>
 
 <!-- Divider -->
@@ -27,11 +27,11 @@
 
 
 <!-- Nav Item - Pages Collapse Menu -->
-<li class="nav-item">
+<!--<li class="nav-item">
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
-                  <!--  <i class="fas fa-fw fa-cog"></i>-->
-                    <span>Web Pages</span>
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span> <b> Web Pages </b> </span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
@@ -40,13 +40,13 @@
                         <a class="collapse-item" href=""></a>
                     </div>
                 </div>
-</li>
+</li>-->
 
 
 
 <!-- Nav Item - Pages Collapse Menu -->
 <li class="nav-item">
-<a class="nav-link active" aria-current="page" href="register.php">Admin Profile</a>
+<a class="nav-link active" aria-current="page" href="register.php"> <b> Admin Profile </b></a>
 
     
 </li>
@@ -56,7 +56,41 @@
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="users.php">Users</a>
+          <a class="nav-link active" aria-current="page" href="users.php"> <b> Users </b></a>
+
+     </li>  
+</li>
+
+<!-- Nav Item - Pages Collapse Menu -->
+<li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
+                    aria-expanded="true" aria-controls="collapseTwo">
+                  <!--  <i class="fas fa-fw fa-cog"></i>-->
+                 <span> <b> Cylinder </b> </span>
+                </a>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                       <!-- <h6 class="collapse-header">Cylinder </h6>-->
+                        <a class="collapse-item" aria-current="page" href="cylinder.php">Cylinder Details</a>
+                        <a class="collapse-item" href="cylinderstock.php"> Cylinder Stock</a>
+                    </div>
+                </div>
+</li>
+
+
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<!--<li class="nav-item">
+    <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="cylinder.php"><b> Cylinder </b></a>
+
+     </li>  
+</li>-->
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="employees.php"><b> Employees </b></a>
 
      </li>  
 </li>
@@ -65,21 +99,39 @@
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="cylinder.php">Cylinder</a>
+          <a class="nav-link active" aria-current="page" href="vendors.php"><b> Vendors </b></a>
 
      </li>  
 </li>
+
+
 <!-- Nav Item - Utilities Collapse Menu -->
 <li class="nav-item">
     <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="orders.php">Order</a>
+          <a class="nav-link active" aria-current="page" href="orders.php"><b> Order </b></a>
+
+     </li>  
+</li>
+
+<!-- Nav Item - Utilities Collapse Menu -->
+<li class="nav-item">
+    <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="payment.php"> <b> Payment </b></a>
+
+     </li>  
+</li>
+
+
+<li class="nav-item">
+    <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="signuprequest.php"><b> Sign Up Requests </b></a>
 
      </li>  
 </li>
 
 <li class="nav-item">
     <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="signuprequest.php">Sign Up Requests</a>
+          <a class="nav-link active" aria-current="page" href="feedback.php"> <b>Feedback </b></a>
 
      </li>  
 </li>
@@ -102,20 +154,6 @@
         <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
             <i class="fa fa-bars"></i>
         </button>
-
-        <!-- Topbar Search -->
-        <form
-            class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
-            <div class="input-group">
-                <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..."
-                    aria-label="Search" aria-describedby="basic-addon2">
-                <div class="input-group-append">
-                    <button class="btn btn-primary" type="button">
-                        <i class="fas fa-search fa-sm"></i>
-                    </button>
-                </div>
-            </div>
-        </form>
 
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">

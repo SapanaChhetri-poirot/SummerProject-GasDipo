@@ -9,7 +9,7 @@ include('includes/navbar.php'); ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Add Admin Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Add Employee Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times; </span>
                 </button>
@@ -18,41 +18,56 @@ include('includes/navbar.php'); ?>
             <form action="code.php" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                        <label>Employee Id</label>
+                        <input type="text" name="id" class="form-control" placeholder="Enter Employee Id" required>
                     </div>
 
                     <div class="form-group">
-                        <label>UserType</label>
-                        <input type="text"  name="usertype" class="form-control" placeholder="Enter User type">
+                        <label> Name</label>
+                        <input type="text"  name="name" class="form-control" placeholder="Enter Name" required>
                     </div>
 
                     <div class="form-group">
-                        <label>User Code</label>
-                        <input type="text"  name="usercode" class="form-control" placeholder="Enter User Code">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control checking-email" placeholder="Enter Email">
+                        <label> Address</label>
+                        <input type="text" name="address" class="form-control" placeholder="Enter Address" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                        <label> DOB</label>
+                        <input type="text" name="dob" class="form-control" placeholder="Enter Date of Birth" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" name="confirmpassword" class="form-control" placeholder="Enter Password again">
+                        <label> Email</label>
+                        <input type="email" name="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label> Phone number</label>
+                        <input type="number" name="phone" class="form-control" placeholder="Enter Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <label> Post</label>
+                        <input type="text" name="post" class="form-control" placeholder="Enter post" required>
+                    </div>
+                    <div class="form-group">
+                        <label> Salary</label>
+                        <input type="number" name="salary" class="form-control" placeholder="Enter Salary" required>
+                    </div>
+                    <div class="form-group">
+                        <label> Joined date</label>
+                        <input type="text" name="joineddate" class="form-control" placeholder="Enter Joined Date" required>
+                    </div>
+                    <div class="form-group">
+                        <label> Status</label>
+                        <input type="text" name="status" class="form-control" placeholder="Enter Status (active or passive)" required>
                     </div>
 
+                    
                     <!-- <input type="hidden" name="usertype" value="user"> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="Submit" name="registerbtn" class="btn btn-primary">Save</button>
+                    <button type="Submit" name="registerbtnofemployee" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -65,9 +80,9 @@ include('includes/navbar.php'); ?>
     <!-- Data tales eg -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Admin Profile
+            <h6 class="m-0 font-weight-bold text-primary"> Employees Data
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                    Add Admin Profile
+                    Add Employees Data
                 </button>
             </h6>
         </div>
@@ -89,7 +104,7 @@ include('includes/navbar.php'); ?>
             <div class="table-responsive">
 
                 <?php
-                $query = "SELECT * from register ";
+                $query = "SELECT * from employee";
                 $query_run = mysqli_query($connection, $query);
 
 
@@ -99,13 +114,18 @@ include('includes/navbar.php'); ?>
                 <table class="table table-bordred" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Usercode</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>UserType</th>
-                            <th>EDIT</th>
+                            <th>Employee ID</th>
+                            <th> Name</th>
+                            <th> Address</th>
+                            <th> DOB</th>
+                            <th> Email</th>
+                            <th> Phone</th>
+                            <th> Post</th>
+                            <th> Salary</th>
+                            <th> Joined Date</th>
+                            <th> Status</th>
+
+                            <th> EDIT </th>
                             <th>DELETE</th>
                         </tr>
                     </thead>
@@ -118,17 +138,22 @@ include('includes/navbar.php'); ?>
                                 <tr>
 
                                     <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['username']; ?></td>
-                                    <td><?php echo $row['usercode']; ?></td>
-
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td> <?php echo $row['address']; ?></td>
+                                    <td> <?php echo $row['dob']; ?></td>
                                     <td> <?php echo $row['email']; ?></td>
-                                    <td> <?php echo $row['password']; ?></td>
-                                    <td> <?php echo $row['usertype']; ?></td>
+                                    <td> <?php echo $row['phone']; ?></td>
+                                    <td> <?php echo $row['post']; ?></td>
+                                    <td> <?php echo $row['salary']; ?></td>
+                                    <td> <?php echo $row['joineddate']; ?></td>
+                                    <td> <?php echo $row['status']; ?></td>
+
+
 
                                     <td>
-                                        <form action="register_edit.php" method="post">
+                                        <form action="register_editofemployee.php" method="post">
                                             <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" name="edit_btn" class="btn btn-success">
+                                            <button type="submit" name="edit_btnofemployee" class="btn btn-success">
                                                 EDIT
                                             </button>
                                         </form>
@@ -136,7 +161,7 @@ include('includes/navbar.php'); ?>
                                     <td>
                                         <form action="code.php" method="post">
                                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" name="delete_btn" class="btn btn-danger">
+                                            <button type="submit" name="delete_btnofemployee" class="btn btn-danger">
                                                 DELETE
                                             </button>
                                         </form>

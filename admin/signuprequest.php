@@ -47,7 +47,6 @@ include('includes/navbar.php'); ?>
             <div class="table-responsive">
 
                 <?php
-                $connection = mysqli_connect("localhost", "root", "", "db_gasdipo");
                 $query = "SELECT * from signuprequests ";
                 $query_run = mysqli_query($connection, $query);
 

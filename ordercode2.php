@@ -11,12 +11,13 @@ $quantity = $_POST['quantity'];
 $price = $_POST['price'];
 $paymentmethod = $_POST['paymentmethod'];
 $delivery = $_POST['delivery'];
-
+$date = date('Y-m-d H:i:s');
 
 $connection = mysqli_connect("localhost","root","","db_gasdipo");
-$query = "Insert into tborder (userid, usercode, cylinderid, cylinderbrand, quantity, price, paymentmethod, delivery, orderstatus) values ('$userid','$usercode',
-                '$cylinderid','$cylinderbrand','$quantity','$price','$paymentmethod','$delivery','Pending' )";
+$query = "Insert into tborder (userid, usercode, cylinderid, cylinderbrand, quantity, price, paymentmethod, delivery, orderstatus, orderdate) values ('$userid','$usercode',
+                '$cylinderid','$cylinderbrand','$quantity','$price','$paymentmethod','$delivery','Pending', '$date' )";
     
+
 $query_run = mysqli_query($connection, $query);
 
 if($query_run)

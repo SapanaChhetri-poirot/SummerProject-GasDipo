@@ -16,7 +16,7 @@
 
 <body>
 
-
+<?php include'admin/security.php'; ?>
     <!-- //navbar_start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
@@ -28,25 +28,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index_1.php">Home</a>
+                <li class="nav-item">
+                        <a class="nav-link " aria-current="page" href="personaldetails.php"> <b>Personal Details </b></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.php">Services</a>
+                        <a class="nav-link" aria-current="page" href="history.php"> <b>History </b></a>
                     </li>
-
+                    
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">About</a>
+                        <a class="nav-link active" aria-current="page" href="order.php"> <b>Order </b></a>
                     </li>
-
                     <li class="nav-item">
-                        <a class="nav-link" href="contactus.php">Contact</a>
+                        <a class="nav-link " aria-current="page" href="index_1.php"> <b>Log Out </b></a>
                     </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="orderform.php">Order</a>
-                    </li>
-
+                     
                 </ul>
 
             </div>
@@ -89,7 +84,7 @@
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="form-group"> User Code: please make sure that your usercode is correct. </label>
+                                            <label class="form-group"> User Code:  </label>
                                             <input type="text" name="usercode" class="form-control form-control-user" placeholder="Enter Usercode" required>
                                         </div>
 
@@ -146,7 +141,6 @@
                                             Order
                                             </button>
                                             
-                                       <hr> <p > <a href="orderform.php">Go Back </a> </p>
                                     </form>
 
                                 </div>
@@ -154,7 +148,7 @@
                         </div>
                     </div>
                 </div>
-                
+            
                 <!--footer -->
                 <p class="p-3 bg-dark text-white text-center"> @GasDipoHouse</p>
 

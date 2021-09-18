@@ -18,7 +18,6 @@
 
 
 <?php
-$connection = mysqli_connect("localhost","root","","db_gasdipo");
 
 if(isset($_POST['edit_btnofcylinder']))
 {
@@ -58,7 +57,7 @@ if(isset($_POST['edit_btnofcylinder']))
 
 
 
-            <a href="cylinder.php" class="btn btn-danger">CANCEL  </a>
+            <a href="employees.php" class="btn btn-danger">CANCEL  </a>
             <button type="submit" name="updatebtnofcylinder" class="btn btn-primary">
                 UPDATE
             </button>

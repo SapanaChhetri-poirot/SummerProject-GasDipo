@@ -18,7 +18,7 @@ include('includes/navbar.php');
 
 
                 <?php
-                $connection = mysqli_connect("localhost", "root", "", "db_gasdipo");
+               # $connection = mysqli_connect("localhost", "root", "", "db_gasdipo");
 
                 if (isset($_POST['edit_btnofsignup'])) {
                     $id = $_POST['edit_id'];

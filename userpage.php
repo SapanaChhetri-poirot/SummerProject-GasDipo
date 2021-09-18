@@ -15,7 +15,8 @@
 </head>
 
 <body>
-
+<?php include('admin/security.php');
+ ?>
 
     <!-- //navbar_start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -28,26 +29,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index_1.php">Home</a>
+                <li class="nav-item text-white">
+                     <?php echo  $_SESSION['username']?>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="services.php">Services</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="contactus.php">Contact</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link active" href="orderform.php">Order</a>
-                    </li>
-
-                </ul>
+                   
+                    </ul>
 
             </div>
         </div>
@@ -61,13 +47,21 @@
 
     <!-- start of jumbotron -->
     <div class="jumbotron my-0">
-    <br><br><br><br>
-    <h4 class="text-center"> Note:</h4>
-        <p class="p-100 text-center"> Only Members of Gas Dipo can place an order. Also make sure that your
-            usercode is correct. <a href="admin/login.php">Log In</a> </p>
+    
+   <!-- <h4 class="text-center"> Note:</h4>--><h2 class="text-center">
+    Hello! Welcome <?php echo $_SESSION['username'];?>. Choose any one of the following:</h2><br>
+       <ul class="list-group">
+       
+       <li class="list-group-item"> <p class="p-100 text-center">  <a href="personaldetails.php"> View Personal Details</a> </p></li>
 
-        <p class="text-center"> Not a member yet? Please <a href="admin/signup.php"> Sign Up </a> </p>
-        <br><br><br><br><br>
+       <li class="list-group-item"> <p class="p-100 text-center">  <a href="history.php"> View  History</a> </p></li>
+
+
+     <li class="list-group-item">   <p class="text-center"><a href="order.php"> Place an order </a> </p></li>
+     <li class="list-group-item">   <p class="text-center"><a href="index_1.php"> Log Out </a> </p></li>
+
+       </ul><br>
+        
     </div>
 
     <!-- end -->

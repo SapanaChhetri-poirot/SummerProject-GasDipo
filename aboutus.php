@@ -29,14 +29,14 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index_1.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index_1.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="services.php">Services</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="aboutus.php">About</a>
+                        <a class="nav-link active" href="aboutus.php">About</a>
                     </li>
 
                     <li class="nav-item">
@@ -44,9 +44,12 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="orderform.php">Order</a>
+                        <a class="nav-link" href="admin/login.php">Login</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/signup.php">Sign up</a>
+                    </li>
+                   
                 </ul>
                
             </div>
@@ -57,7 +60,7 @@
 
 
 <!-- start of jumbotron -->
-    <div class="jumbotron">
+    <div class="jumbotron my-0">
   <h1 class="text-center">About us</h1>
   <h2 class=""> We are Gas Dipo.</h2>
 
@@ -100,7 +103,7 @@
 
 
    <!--footer -->
-   <p class="p-3 bg-dark text-white text-center"> @GasDipoHouse</p>
+   <p class="p-3 bg-dark text-white text-center my-0"> @GasDipoHouse</p>
 
 <!-- footer end-->
 

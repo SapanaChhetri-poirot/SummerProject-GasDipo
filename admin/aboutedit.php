@@ -18,7 +18,6 @@
 
 
 <?php
-$connection = mysqli_connect("localhost","root","","db_gasdipo");
 
 if(isset($_POST['edit_btn']))
 {

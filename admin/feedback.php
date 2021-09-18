@@ -9,14 +9,13 @@ include('includes/navbar.php'); ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Add User Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Feedback</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times; </span>
                 </button>
             </div>
 
-            
-        </div>
+            </div>
     </div>
 </div>
 
@@ -26,8 +25,8 @@ include('includes/navbar.php'); ?>
     <!-- Data tales eg -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Order Data
-
+            <h6 class="m-0 font-weight-bold text-primary"> Feedback
+                
             </h6>
         </div>
         <div class="card-body">
@@ -48,7 +47,7 @@ include('includes/navbar.php'); ?>
             <div class="table-responsive">
 
                 <?php
-                $query = "SELECT * from tborder ";
+                $query = "SELECT * from feedback ";
                 $query_run = mysqli_query($connection, $query);
 
 
@@ -58,20 +57,15 @@ include('includes/navbar.php'); ?>
                 <table class="table table-bordred" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>OrderID</th>
-                            <th>UserID</th>
-                            <th>UserCode</th>
-                            <th>CylinderID</th>
-                            <th>CylinderBrand</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Payment Method</th>
-                            <th>Delivery</th>
-                            <th> Order Status </th>
-                            <th> Order Date </th>
+                            <th> Feedback ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone number</th>
+                            <th>Feedback</th>
+                            <th>Checked</th>
 
                             <th> EDIT </th>
-                            <th>DELETE</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -82,35 +76,22 @@ include('includes/navbar.php'); ?>
 
                                 <tr>
 
-                                    <td><?php echo $row['orderid']; ?></td>
-                                    <td><?php echo $row['userid']; ?></td>
-                                    <td> <?php echo $row['usercode']; ?></td>
-                                    <td> <?php echo $row['cylinderid']; ?></td>
-                                    <td> <?php echo $row['cylinderbrand']; ?></td>
-                                    <td> <?php echo $row['quantity']; ?></td>
-                                    <td> <?php echo $row['price']; ?></td>
-                                    <td> <?php echo $row['paymentmethod']; ?></td>
-                                    <td> <?php echo $row['delivery']; ?></td>
-                                    <td> <?php echo $row['orderstatus']; ?></td>
-                                    <td> <?php echo $row['orderdate']; ?></td>
-
+                                    <td><?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['name']; ?></td>
+                                    <td> <?php echo $row['email']; ?></td>
+                                    <td> <?php echo $row['phonenumber']; ?></td>
+                                    <td> <?php echo $row['feedback']; ?></td>
+                                    <td> <?php echo $row['checked']; ?></td>
+                                    
                                     <td>
-                                        <form action="register_editoforder.php" method="post">
-                                            <input type="hidden" name="edit_orderid" value="<?php echo $row['orderid']; ?>">
-                                            <button type="submit" name="edit_btnoforder" class="btn btn-success">
+                                        <form action="feedbackedit.php" method="post">
+                                            <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
+                                            <button type="submit" name="edit_btn" class="btn btn-success">
                                                 EDIT
                                             </button>
                                         </form>
                                     </td>
-                                    <td>
-                                        <form action="code.php" method="post">
-                                            <input type="hidden" name="delete_order" value="<?php echo $row['usercode']; ?>">
-                                            <button type="submit" name="delete_btnoforder" class="btn btn-danger">
-                                                DELETE
-                                            </button>
-                                        </form>
-                                    </td>
-
+                                    
                                 </tr>
 
                         <?php

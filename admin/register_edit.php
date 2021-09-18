@@ -18,7 +18,6 @@
 
 
 <?php
-$connection = mysqli_connect("localhost","root","","db_gasdipo");
 
 if(isset($_POST['edit_btn']))
 {
@@ -36,8 +35,14 @@ if(isset($_POST['edit_btn']))
 
             <div class="form-group">
                 <label>Username</label>
-                <input type="text" name="edit_username" name="username" value=" <?php echo $row['username']; ?>"class="form-control" placeholder="Enter Username">
+                <input type="text" name="edit_username"  value="<?php echo $row['username']; ?>"class="form-control">
             </div>
+
+            <div class="form-group">
+                <label>Usercode</label>
+                <input type="text" name="edit_usercode"  value="<?php echo $row['usercode']; ?>"class="form-control" placeholder="Enter Username">
+            </div>
+
 
             <div class="form-group">
                 <label>Email</label>
@@ -46,15 +51,16 @@ if(isset($_POST['edit_btn']))
 
             <div class="form-group">
                 <label>Password</label>
-                <input type="password" name="edit_password" value="<?php echo $row['username']; ?>" name="password" class="form-control" placeholder="Enter Password">
+                <input type="password" name="edit_password" value="<?php echo $row['password']; ?>" name="password" class="form-control" placeholder="Enter Password">
             </div>
 
             <div class="form-group">
                 <label>UserType</label> 
-                <input type="text" name="edit_usertype" value=" <?php echo $row['usertype'] ?>" name="usertype" class="form-control">
+                <input type="text" name="edit_usertype" value="<?php echo $row['usertype'] ?>" name="usertype" class="form-control">
                 <select name="update_usertype" >
+                <option value="user">User</option>
+
                     <option value="admin">Admin</option>
-                    <option value="user">User</option>
 
                 </select>
             </div>

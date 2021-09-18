@@ -18,7 +18,6 @@ include('includes/navbar.php');
 
 
                 <?php
-                $connection = mysqli_connect("localhost", "root", "", "db_gasdipo");
 
                 if (isset($_POST['edit_btnoforder'])) {
                     $orderid = $_POST['edit_orderid'];
@@ -72,6 +71,12 @@ include('includes/navbar.php');
                             <div class="form-group">
                                 <label>Delivery</label>
                                 <input type="delivery" name="edit_delivery" value="<?php echo $row['delivery']; ?>" class="form-control" readonly>
+                            </div>
+
+                            
+                            <div class="form-group">
+                                <label>Order Date </label>
+                                <input type="text" name="edit_orderdate" value="<?php echo $row['orderdate']; ?>" class="form-control" readonly>
                             </div>
                             <div class="form-group">
                                 <label>Order Status</label>

@@ -1,7 +1,6 @@
 <?php
 //session_start();
 include('security.php');
-$connection = mysqli_connect("localhost","root","","db_gasdipo");
 
 if(isset($_POST['signup_btn']))
 {
@@ -13,7 +12,8 @@ if(isset($_POST['signup_btn']))
 
 
 
-    $query = "Insert into signuprequests (username, address, dateofbirth, phonenumber, email, orderstatus) values('$username', '$address','$dateofbirth','$phonenumber','$email', 'pending') ";
+    $query = "INSERT INTO signuprequests (username, address, dateofbirth, phonenumber, email, requeststatus)
+     values('$username', '$address','$dateofbirth','$phonenumber','$email', 'pending') ";
     $query_run = mysqli_query($connection, $query);
     if($query_run)
     

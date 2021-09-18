@@ -56,7 +56,7 @@ include('includes/navbar.php'); ?>
     <!-- Data tales eg -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Cylinder Data
+            <h6 class="m-0 font-weight-bold text-primary"> Cylinder Details
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
                     Add Cylinder Data
                 </button>
@@ -77,10 +77,14 @@ include('includes/navbar.php'); ?>
             }
 
             ?>
+
+        
+
+
+
             <div class="table-responsive">
 
                 <?php
-                $connection = mysqli_connect("localhost", "root", "", "db_gasdipo");
                 $query = "SELECT * from cylinder ";
                 $query_run = mysqli_query($connection, $query);
 

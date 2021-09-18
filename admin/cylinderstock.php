@@ -9,7 +9,7 @@ include('includes/navbar.php'); ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Add Admin Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Add Cylinder Stock Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times; </span>
                 </button>
@@ -18,41 +18,38 @@ include('includes/navbar.php'); ?>
             <form action="code.php" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Enter Username">
-                    </div>
-
-                    <div class="form-group">
-                        <label>UserType</label>
-                        <input type="text"  name="usertype" class="form-control" placeholder="Enter User type">
-                    </div>
-
-                    <div class="form-group">
-                        <label>User Code</label>
-                        <input type="text"  name="usercode" class="form-control" placeholder="Enter User Code">
+                        <label>Stock ID</label>
+                        <input type="text" name="stockid" class="form-control" placeholder="Enter Stock Id" required>
                     </div>
 
 
                     <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control checking-email" placeholder="Enter Email">
+                        <label>Cylinder ID</label>
+                        <input type="text" name="cylinderid" class="form-control" placeholder="Enter Cylinder Id" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                        <label>Vendor ID</label>
+                        <input type="text" name="vendorid" class="form-control" placeholder="Enter Vendor ID" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" name="confirmpassword" class="form-control" placeholder="Enter Password again">
+                        <label> Cylinder Quantity</label>
+                        <input type="text" name="cylinderquantity" class="form-control" placeholder="Enter Cylinder Quantity" required>
                     </div>
+
+                    <div class="form-group">
+                        <label> Note</label>
+                        <input type="text" name="note" class="form-control" placeholder="Enter note" required>
+                    </div>
+
+
 
                     <!-- <input type="hidden" name="usertype" value="user"> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="Submit" name="registerbtn" class="btn btn-primary">Save</button>
+                    <button type="Submit" name="registerbtnofcylinderstock" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -65,9 +62,9 @@ include('includes/navbar.php'); ?>
     <!-- Data tales eg -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Admin Profile
+            <h6 class="m-0 font-weight-bold text-primary"> Cylinder Stock Details
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                    Add Admin Profile
+                    Add Cylinder Stock Data
                 </button>
             </h6>
         </div>
@@ -86,10 +83,15 @@ include('includes/navbar.php'); ?>
             }
 
             ?>
+
+
+
+
+
             <div class="table-responsive">
 
                 <?php
-                $query = "SELECT * from register ";
+                $query = "SELECT * from cylinderstock ";
                 $query_run = mysqli_query($connection, $query);
 
 
@@ -99,13 +101,15 @@ include('includes/navbar.php'); ?>
                 <table class="table table-bordred" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Usercode</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>UserType</th>
-                            <th>EDIT</th>
+                            <th>Stock ID</th>
+
+                            <th>Cylinder ID</th>
+                            <th>Vendor ID</th>
+
+                            <th>Cylinder Quantity</th>
+                            <th>Note</th>
+
+                            <th> EDIT </th>
                             <th>DELETE</th>
                         </tr>
                     </thead>
@@ -116,27 +120,25 @@ include('includes/navbar.php'); ?>
                         ?>
 
                                 <tr>
+                                    <td><?php echo $row['stockid']; ?></td>
 
-                                    <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['username']; ?></td>
-                                    <td><?php echo $row['usercode']; ?></td>
-
-                                    <td> <?php echo $row['email']; ?></td>
-                                    <td> <?php echo $row['password']; ?></td>
-                                    <td> <?php echo $row['usertype']; ?></td>
+                                    <td><?php echo $row['cylinderid']; ?></td>
+                                    <td><?php echo $row['vendorid']; ?></td>
+                                    <td> <?php echo $row['cylinderquantity']; ?></td>
+                                    <td> <?php echo $row['note']; ?></td>
 
                                     <td>
-                                        <form action="register_edit.php" method="post">
-                                            <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" name="edit_btn" class="btn btn-success">
+                                        <form action="register_editofcylinderstock.php" method="post">
+                                            <input type="hidden" name="edit_id" value="<?php echo $row['stockid']; ?>">
+                                            <button type="submit" name="edit_btnofcylinderstock" class="btn btn-success">
                                                 EDIT
                                             </button>
                                         </form>
                                     </td>
                                     <td>
                                         <form action="code.php" method="post">
-                                            <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" name="delete_btn" class="btn btn-danger">
+                                            <input type="hidden" name="delete_id" value="<?php echo $row['stockid']; ?>">
+                                            <button type="submit" name="delete_btnofcylinderstock" class="btn btn-danger">
                                                 DELETE
                                             </button>
                                         </form>

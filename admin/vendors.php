@@ -9,7 +9,7 @@ include('includes/navbar.php'); ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Add Admin Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Add Vendors Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times; </span>
                 </button>
@@ -18,41 +18,53 @@ include('includes/navbar.php'); ?>
             <form action="code.php" method="POST">
                 <div class="modal-body">
                     <div class="form-group">
-                        <label>Username</label>
-                        <input type="text" name="username" class="form-control" placeholder="Enter Username">
+                        <label>Vendor Id</label>
+                        <input type="text" name="vendorid" class="form-control" placeholder="Enter Vendor Id" required>
                     </div>
 
                     <div class="form-group">
-                        <label>UserType</label>
-                        <input type="text"  name="usertype" class="form-control" placeholder="Enter User type">
+                        <label>Company Name</label>
+                        <input type="text"  name="companyname" class="form-control" placeholder="Enter Company Name" required>
                     </div>
 
                     <div class="form-group">
-                        <label>User Code</label>
-                        <input type="text"  name="usercode" class="form-control" placeholder="Enter User Code">
-                    </div>
-
-
-                    <div class="form-group">
-                        <label>Email</label>
-                        <input type="email" name="email" class="form-control checking-email" placeholder="Enter Email">
+                        <label> Address</label>
+                        <input type="text" name="address" class="form-control" placeholder="Enter Address" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Password</label>
-                        <input type="password" name="password" class="form-control" placeholder="Enter Password">
+                        <label> Email</label>
+                        <input type="text" name="email" class="form-control" placeholder="Enter Email" required>
+                    </div>
+
+                    
+
+                    <div class="form-group">
+                        <label> Phone number</label>
+                        <input type="number" name="phone" class="form-control" placeholder="Enter Phone Number" required>
                     </div>
 
                     <div class="form-group">
-                        <label>Confirm Password</label>
-                        <input type="password" name="confirmpassword" class="form-control" placeholder="Enter Password again">
+                        <label> Cylinder ID</label>
+                        <input type="text" name="cylinderid" class="form-control" placeholder="Enter Cylinder ID" required>
+                    </div>
+                    
+                    
+                    <div class="form-group">
+                        <label> Price of Cylinder</label>
+                        <input type="text" name="priceofcylinder" class="form-control" placeholder="Enter Price of Cylinder" required>
+                    </div>
+                    <div class="form-group">
+                        <label> Status</label>
+                        <input type="text" name="status" class="form-control" placeholder="Enter Status (active or passive)" required>
                     </div>
 
+                    
                     <!-- <input type="hidden" name="usertype" value="user"> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="Submit" name="registerbtn" class="btn btn-primary">Save</button>
+                    <button type="Submit" name="registerbtnofvendor" class="btn btn-primary">Save</button>
                 </div>
             </form>
         </div>
@@ -65,9 +77,9 @@ include('includes/navbar.php'); ?>
     <!-- Data tales eg -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Admin Profile
+            <h6 class="m-0 font-weight-bold text-primary"> Vendors Data
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
-                    Add Admin Profile
+                    Add Vendors Data
                 </button>
             </h6>
         </div>
@@ -89,7 +101,7 @@ include('includes/navbar.php'); ?>
             <div class="table-responsive">
 
                 <?php
-                $query = "SELECT * from register ";
+                $query = "SELECT * from vendor";
                 $query_run = mysqli_query($connection, $query);
 
 
@@ -99,13 +111,16 @@ include('includes/navbar.php'); ?>
                 <table class="table table-bordred" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>ID</th>
-                            <th>Username</th>
-                            <th>Usercode</th>
-                            <th>Email</th>
-                            <th>Password</th>
-                            <th>UserType</th>
-                            <th>EDIT</th>
+                            <th>Vendor ID</th>
+                            <th>Company Name</th>
+                            <th> Address</th>
+                            <th> Email</th>
+                            <th> Phone</th>
+                            <th> Cylinder ID</th>
+                            <th> Price of Cylinder</th>
+                            <th> Status</th>
+
+                            <th> EDIT </th>
                             <th>DELETE</th>
                         </tr>
                     </thead>
@@ -118,17 +133,20 @@ include('includes/navbar.php'); ?>
                                 <tr>
 
                                     <td><?php echo $row['id']; ?></td>
-                                    <td><?php echo $row['username']; ?></td>
-                                    <td><?php echo $row['usercode']; ?></td>
-
+                                    <td><?php echo $row['companyname']; ?></td>
+                                    <td> <?php echo $row['address']; ?></td>
                                     <td> <?php echo $row['email']; ?></td>
-                                    <td> <?php echo $row['password']; ?></td>
-                                    <td> <?php echo $row['usertype']; ?></td>
+                                    <td> <?php echo $row['phone']; ?></td>
+                                    <td> <?php echo $row['cylinderid']; ?></td>
+                                    <td> <?php echo $row['priceofcylinder']; ?></td>
+                                    <td> <?php echo $row['status']; ?></td>
+
+
 
                                     <td>
-                                        <form action="register_edit.php" method="post">
+                                        <form action="register_editofvendor.php" method="post">
                                             <input type="hidden" name="edit_id" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" name="edit_btn" class="btn btn-success">
+                                            <button type="submit" name="edit_btnofvendor" class="btn btn-success">
                                                 EDIT
                                             </button>
                                         </form>
@@ -136,7 +154,7 @@ include('includes/navbar.php'); ?>
                                     <td>
                                         <form action="code.php" method="post">
                                             <input type="hidden" name="delete_id" value="<?php echo $row['id']; ?>">
-                                            <button type="submit" name="delete_btn" class="btn btn-danger">
+                                            <button type="submit" name="delete_btnofvendor" class="btn btn-danger">
                                                 DELETE
                                             </button>
                                         </form>

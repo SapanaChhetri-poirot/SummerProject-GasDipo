@@ -9,13 +9,27 @@ include('includes/navbar.php'); ?>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel"> Add User Data</h5>
+                <h5 class="modal-title" id="exampleModalLabel"> Add Payment Data</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true"> &times; </span>
                 </button>
             </div>
 
-            
+            <form action="code.php" method="POST">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>OrderID</label>
+                        <input type="text" name="orderid" class="form-control" placeholder="Enter Order Id" required>
+                    </div>
+
+                    
+                    <!-- <input type="hidden" name="usertype" value="user"> -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="Submit" name="registerbtnofpayment" class="btn btn-primary">Save</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
@@ -26,8 +40,10 @@ include('includes/navbar.php'); ?>
     <!-- Data tales eg -->
     <div class="card shadow mb-4">
         <div class="card-header py-3">
-            <h6 class="m-0 font-weight-bold text-primary"> Order Data
-
+            <h6 class="m-0 font-weight-bold text-primary"> Payment Profile
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
+                    Add Payment Data
+                </button>
             </h6>
         </div>
         <div class="card-body">
@@ -47,8 +63,8 @@ include('includes/navbar.php'); ?>
             ?>
             <div class="table-responsive">
 
-                <?php
-                $query = "SELECT * from tborder ";
+               <?php
+                $query = "SELECT * from payment ";
                 $query_run = mysqli_query($connection, $query);
 
 
@@ -58,20 +74,18 @@ include('includes/navbar.php'); ?>
                 <table class="table table-bordred" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>OrderID</th>
+                        <th> PaymentID </th>
+                            <th> OrderID</th>
                             <th>UserID</th>
-                            <th>UserCode</th>
-                            <th>CylinderID</th>
-                            <th>CylinderBrand</th>
-                            <th>Quantity</th>
-                            <th>Price</th>
-                            <th>Payment Method</th>
-                            <th>Delivery</th>
-                            <th> Order Status </th>
-                            <th> Order Date </th>
+                            <th>Usercode</th>
+
+                            <th>CylinderID </th>
+                            <th>Price </th>
+                            <th>Payment Method </th>
+                            <th>Status </th>
+                            <th>Remarks </th>
 
                             <th> EDIT </th>
-                            <th>DELETE</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -82,35 +96,26 @@ include('includes/navbar.php'); ?>
 
                                 <tr>
 
+                                    <td><?php echo $row['paymentid']; ?></td>
                                     <td><?php echo $row['orderid']; ?></td>
-                                    <td><?php echo $row['userid']; ?></td>
+                                    <td> <?php echo $row['userid']; ?></td>
                                     <td> <?php echo $row['usercode']; ?></td>
+
                                     <td> <?php echo $row['cylinderid']; ?></td>
-                                    <td> <?php echo $row['cylinderbrand']; ?></td>
-                                    <td> <?php echo $row['quantity']; ?></td>
                                     <td> <?php echo $row['price']; ?></td>
                                     <td> <?php echo $row['paymentmethod']; ?></td>
-                                    <td> <?php echo $row['delivery']; ?></td>
-                                    <td> <?php echo $row['orderstatus']; ?></td>
-                                    <td> <?php echo $row['orderdate']; ?></td>
+                                    <td> <?php echo $row['status']; ?></td>
+                                    <td> <?php echo $row['remarks']; ?></td>
 
                                     <td>
-                                        <form action="register_editoforder.php" method="post">
-                                            <input type="hidden" name="edit_orderid" value="<?php echo $row['orderid']; ?>">
-                                            <button type="submit" name="edit_btnoforder" class="btn btn-success">
+                                        <form action="register_editofpayment.php" method="post">
+                                            <input type="hidden" name="edit_paymentid" value="<?php echo $row['paymentid']; ?>">
+                                            <button type="submit" name="edit_btnofpayment" class="btn btn-primary">
                                                 EDIT
                                             </button>
                                         </form>
                                     </td>
-                                    <td>
-                                        <form action="code.php" method="post">
-                                            <input type="hidden" name="delete_order" value="<?php echo $row['usercode']; ?>">
-                                            <button type="submit" name="delete_btnoforder" class="btn btn-danger">
-                                                DELETE
-                                            </button>
-                                        </form>
-                                    </td>
-
+                                    
                                 </tr>
 
                         <?php

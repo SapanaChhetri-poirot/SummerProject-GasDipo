@@ -1,7 +1,6 @@
 <?php
 //session_start();
 include('security.php');
-$connection = mysqli_connect("localhost","root","","db_gasdipo");
 
 if(isset($_POST['login_btn']))
 {
@@ -36,7 +35,7 @@ if(isset($_POST['login_btn']))
             if($usertypes == "user")
            {
                $_SESSION['username'] = $username_login; 
-               header('Location: ../order.php');
+               header('Location: ../userpage.php');
         
            }
            else

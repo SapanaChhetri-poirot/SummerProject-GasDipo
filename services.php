@@ -20,7 +20,7 @@
     <!-- //navbar_start -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-        <img  src="images/gasstove1.jpg" width="40px" height="40px"> 
+            <img src="images/gasstove1.jpg" width="40px" height="40px">
 
             <a class="navbar-brand" href="index_1.php">Gas Dipo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index_1.php">Home</a>
+                        <a class="nav-link " aria-current="page" href="index_1.php">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="services.php">Services</a>
+                        <a class="nav-link active" href="services.php">Services</a>
                     </li>
 
                     <li class="nav-item">
@@ -42,13 +42,18 @@
                     <li class="nav-item">
                         <a class="nav-link" href="contactus.php">Contact</a>
                     </li>
+                   
                     <li class="nav-item">
-                        <a class="nav-link" href="orderform.php">Order</a>
+                        <a class="nav-link" href="admin/login.php">Login</a>
                     </li>
-
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/signup.php">Sign up</a>
+                    </li>
+                   
+           
 
                 </ul>
-               </div>
+            </div>
         </div>
     </nav>
 
@@ -56,9 +61,9 @@
 
 
     <!-- start of jumbotron -->
-    <div class="jumbotron">
+    <div class="jumbotron my-0">
         <h1 class="text-center"> Our Services</h1>
-
+        <br><br>
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-12">
@@ -71,10 +76,10 @@
                         Wr provide various brands of cylinder and we also have services of delivery.
                     </p>
                 </div>
-                
+
             </div> <br>
             <div class="row">
-            <div class="col-lg-6 col-md-6 col-12">
+                <div class="col-lg-6 col-md-6 col-12">
                     <img src="images/gasstove1.jpg" class="img-fluid aboutimage">
                 </div>
 
@@ -84,7 +89,7 @@
                         Wr provide various brands of stove and we also have services of delivery.
                     </p>
                 </div>
-        
+
             </div>
         </div>
 
@@ -97,7 +102,7 @@
 
 
     <!--footer -->
-    <p class="p-3 bg-dark text-white text-center"> @GasDipoHouse</p>
+    <p class="p-3 bg-dark text-white text-center my-0"> @GasDipoHouse</p>
 
     <!-- footer end-->
 

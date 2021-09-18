@@ -82,7 +82,6 @@ include('includes/navbar.php'); ?>
     <div class="table-responsive">
 
         <?php 
-        $connection = mysqli_connect("localhost","root","","db_gasdipo");
         $query = "SELECT * from aboutus ";
         $query_run = mysqli_query($connection, $query);
 
@@ -98,6 +97,8 @@ include('includes/navbar.php'); ?>
                     <th>Sub Title</th>
                     <th>Description</th>
                     <th>Links</th>
+                    <th>Image</th>
+
                     <th>EDIT</th>
                     <th>DELETE</th>
                 </tr>
@@ -117,6 +118,8 @@ include('includes/navbar.php'); ?>
                     <td> <?php  echo $row['subtitle'];?></td>
                     <td> <?php  echo $row['description']; ?></td>
                     <td> <?php echo $row['links']; ?></td>
+                    <td> <?php echo 'image' ?></td>
+
 
                     <td> 
                            <form action="aboutedit.php" method="post">

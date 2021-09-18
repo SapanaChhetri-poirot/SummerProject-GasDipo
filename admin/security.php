@@ -2,9 +2,9 @@
 session_start();
 include('database/dbconfig.php');
 
-if($connection)
+if($dbconfig)
 {
-    // echo "Database Connected";
+    //echo "Database Connected";
 
 }
 else
@@ -15,7 +15,7 @@ else
 
 if(!($_SESSION['username']))
 {
-  $_SESSION['status'] = 'Login first';
+ // $_SESSION['status'] = 'Login first';
 
  header('Location: login.php');
  }

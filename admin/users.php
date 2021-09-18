@@ -23,7 +23,7 @@ include('includes/navbar.php'); ?>
                     </div>
 
                     <div class="form-group">
-                        <label>User Codee</label>
+                        <label>User Code</label>
                         <input type="text"  name="usercode" class="form-control" placeholder="Enter Usercode " required> 
                     </div>
 
@@ -74,7 +74,6 @@ include('includes/navbar.php'); ?>
             <div class="table-responsive">
 
                 <?php
-                $connection = mysqli_connect("localhost", "root", "", "db_gasdipo");
                 $query = "SELECT * from tbuser ";
                 $query_run = mysqli_query($connection, $query);
 
@@ -85,7 +84,7 @@ include('includes/navbar.php'); ?>
                 <table class="table table-bordred" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                         <tr>
-                            <th>Usr ID</th>
+                            <th>User ID</th>
                             <th>Usercode</th>
                             <th>User name</th>
                             <th> EDIT </th>

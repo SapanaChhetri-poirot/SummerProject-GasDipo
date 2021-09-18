@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index_1.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index_1.php">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="services.php">Services</a>
@@ -38,12 +38,16 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="contactus.php">Contact</a>
+                        <a class="nav-link active" href="contactus.php">Contact</a>
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="orderform.php">Order</a>
+                        <a class="nav-link" href="admin/login.php">Login</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/signup.php">Sign up</a>
+                    </li>
+                   
 
 
                 </ul>
@@ -56,8 +60,8 @@
 
 
 <!-- start of jumbotron -->
-    <div class="jumbotron">
-  <h1 class="text-center">Contact us</h1>
+    <div class="jumbotron my-0">
+  <h1 class="text-center">Contact us</h1> <br> <br>
   <div class="col-lg-12 col-md-12 col-12">
 
 <div class="card text-center">
@@ -66,7 +70,6 @@
         <p class="card-text">Sundarijal, Kathmandu</p>
         <p class="card-text">9898989898, 9851233445</p>
         <p class="card-text"> 4325345</p>
-
         <p class="card-text">info@gasdipo.com</p>
       <!--  <a href="#" class="btn btn-primary">See Profile</a> -->
     </div>
@@ -78,7 +81,7 @@
 
 
    <!--footer -->
-   <p class="p-3 bg-dark text-white text-center"> @GasDipoHouse</p>
+   <p class="p-3 bg-dark text-white text-center my-0"> @GasDipoHouse</p>
 
 <!-- footer end-->
 
